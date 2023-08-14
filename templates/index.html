@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Foody - Meal Planner
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/styles_index.css">
+{% endblock %}
+
+{% block main %}
+<div class="signup-container">
+    <div class="left-container">
+        <div class="logo">
+            <img src="/static/My project.png" alt="logo" id="logo1">
+            <img src="/static/scritta foody.png" alt="logo" id="logo2">
+        </div>
+    </div>
+    <div class="right-container">
+        <header>
+        <form action="/meal_plan" method="post">
+            <h1>Meal Planner</h1>
+            <div class="set">
+                <div class="age">
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" id="age" min="1" required>
+                </div>
+                <div class="weight">
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" name="weight" id="weight" min="1" required>
+                </div>
+            </div>
+            <div class="set">
+                <div class="height">
+                    <label for="height">Height (cm):</label>
+                    <input type="number" name="height" id="height" min="50" required>
+                </div>
+                <div class="gender">
+                    <label for="gender">Gender:</label>
+                    <div class="radio-container">
+                        <input type="hidden" id="gender" name="gender" value="" required />
+                        <input id="male-gender" value="male" type="radio" name="gender" required
+                            onclick="document.getElementById('gender').value=this.value;">
+                        <label for="male-gender">Male</label>
+                        <input id="female-gender" value="female" type="radio" name="gender"
+                            onclick="document.getElementById('gender').value=this.value;">
+                        <label for="female-gender">Female</label>
+                    </div>
+                </div>
+            </div>
+                
+                    <div class="activity_level">
+                        <label for="activity_level">Activity Level:</label>
+                        <div class="radio-container">
+                            <input type="hidden" id="activity_level" name="activity_level" value="" required  />
+                            <input id="sedentary-activity_level" value="sedentary" type="radio" name="activity_level" required
+                                onclick="document.getElementById('activity_level').value=this.value;" >
+                            <label for="sedentary-activity_level">Sedentary</label>
+                            <input id="light-activity_level" value="light" type="radio" name="activity_level"
+                                onclick="document.getElementById('activity_level').value=this.value;">
+                            <label for="light-activity_level">Light</label>
+                            <input id="moderate-activity_level" value="moderate" type="radio" name="activity_level"
+                                onclick="document.getElementById('activity_level').value=this.value;">
+                            <label for="moderate-activity_level">Moderate</label>
+                            <input id="very-activity_level" value="very" type="radio" name="activity_level" required
+                                onclick="document.getElementById('activity_level').value=this.value;">
+                            <label for="very-activity_level">Very</label>
+                            <input id="extra-activity_level" value="extra" type="radio" name="activity_level" required
+                                onclick="document.getElementById('activity_level').value=this.value;">
+                            <label for="extra-activity_level">Extra</label>
+                        </div>
+                    </div>
+                
+                
+                    <div class="goal">
+                        <label for="goal">Weight Goal:</label>
+                        <div class="radio-container">
+                            <input type="hidden" id="goal" name="goal" value="" required />
+                            <input id="lose-goal" value="lose" type="radio" name="goal" required
+                                onclick="document.getElementById('goal').value=this.value;">
+                            <label for="lose-goal">Lose</label>
+                            <input id="maintain-goal" value="maintain" type="radio" name="goal"
+                                onclick="document.getElementById('goal').value=this.value;">
+                            <label for="maintain-goal">Maintain</label>
+                            <input id="gain-goal" value="gain" type="radio" name="goal"
+                                onclick="document.getElementById('goal').value=this.value;">
+                            <label for="gain-goal">Gain</label>
+                        </div>
+                    </div>
+                </header>
+                <footer>
+                    <div class="set">
+                        <div class="reset">
+                            <input type="reset" value="Reset">
+                        </div>
+                        <div class="submit">
+                            <input type="submit" value="Submit">
+                        </div>
+                        
+                    </div>
+                </footer>
+        </form>
+        
+    </div>
+</div>
+{% endblock %}

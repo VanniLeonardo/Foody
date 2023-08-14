@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Your meal plan
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="static/styles_meal_plan.css">
+{% endblock %}
+{% block js %}
+<script src="static/meal_plan.js"></script>
+{% endblock %}
+
+{% block main %}
+<div class="container">
+<h1>Your meal plan</h1>
+<br>
+    <p>Here is your meal plan for the day for {{carbohydrate}} carbohydrates, {{fat}} fat, {{protein}} protein grams ({{ calories }} calories):</p>
+</div>
+    <table class="plan">
+        <thead>
+            <tr>
+                <td width="15%">Meal</td>
+                <td>Food</td>
+                <td width="10%">Quantity (g)</td>
+                <td width="10%"></td>
+            </tr>
+        </thead>
+    </table>
+    <table class="plan">
+        <tbody>
+            <tr>
+                <td width="15%">Breakfast <br><span>{{ (calories * 0.15)|int}} calories</span></td>
+                <td>{{ monday_breakfast_food|safe }}</td>
+                <td width="10%">{{ monday_breakfast_quantity|safe}} </td>
+                <div class="tooltip-container">
+                    <p id="tooltip-text1" class="tooltip-text.top tooltip-text.bottom tooltip-text.left tooltip-text.right"> Total estimate of nutrients: <br>
+                    {{ (carbohydrate *0.15)|int}}g carbs <br>
+                    {{ (fat *0.15)|int}}g fat <br>
+                    {{ (protein *0.15)|int}}g protein
+                    </p>
+                    <td width="10%"><a id="tooltip-button1" href="#">DETAILS</a></td>
+                </div>
+            </tr>
+        </tbody>
+    </table>
+    <table class="plan">
+        <tbody>
+            <tr>
+                <td width="15%">Snack 1 <br><span>{{ (calories * 0.10) |int}} calories</span></td>    
+                <td>{{ monday_snack1_food|safe }}</td>
+                <td width="10%">{{ monday_snack1_quantity|safe}} </td>
+                <div class="tooltip-container">
+                    <p id="tooltip-text2">Total estimate of nutrients: <br>
+                    {{ (carbohydrate *0.1)|int}}g carbs <br>
+                    {{ (fat *0.1)|int}}g fat <br>
+                    {{ (protein *0.1)|int}}g protein</p>
+                    <td width="10%"><a id="tooltip-button2" href="#">DETAILS</a></td>
+                </div>
+            </tr>
+        </tbody>
+    </table>
+    <table class="plan">
+        <tbody>
+            <tr>
+                <td width="15%">Lunch <br><span>{{ (calories * 0.35)|int}} calories</span></td>
+                <td>{{ monday_lunch_food|safe }}</td>
+                <td width="10%">{{ monday_lunch_quantity|safe}} </td>
+                <div class="tooltip-container">
+                    <p id="tooltip-text3">Total estimate of nutrients: <br>
+                    {{ (carbohydrate *0.35)|int}}g carbs <br>
+                    {{ (fat *0.35)|int}}g fat <br>
+                    {{ (protein *0.35)|int}}g protein</p>
+                    <td width="10%"><a id="tooltip-button3" href="#">DETAILS</a></td>
+                </div>
+            </tr>
+        </tbody>
+    </table>
+    <table class="plan">
+        <tbody>
+            <tr>
+                <td width="15%">Snack 2 <br><span>{{ (calories * 0.10)|int}} calories</span></td>
+                <td>{{ monday_snack2_food|safe }}</td>
+                <td width="10%">{{ monday_snack2_quantity|safe}} </td>
+                <div class="tooltip-container">
+                    <p id="tooltip-text4">Total estimate of nutrients: <br>
+                    {{ (carbohydrate *0.1)|int}}g carbs <br>
+                    {{ (fat *0.1)|int}}g fat <br>
+                    {{ (protein *0.1)|int}}g protein</p>
+                    <td width="10%"><a id="tooltip-button4" href="#">DETAILS</a></td>
+                </div>
+            </tr>
+        </tbody>
+    </table>
+    <table class="plan">
+        <tbody>
+            <tr>
+                <td width="15%">Dinner <br><span>{{ (calories * 0.30)|int}} calories</span></td>
+                <td>{{ monday_dinner_food|safe }}</td>
+                <td width="10%">{{ monday_dinner_quantity|safe}} </td>
+                <div class="tooltip-container">
+                    <p id="tooltip-text5">Total estimate of nutrients: <br>
+                    {{ (carbohydrate *0.3)|int}}g carbs <br>
+                    {{ (fat *0.3)|int}}g fat <br>
+                    {{ (protein *0.3)|int}}g protein</p>
+                <td width="10%"><a id="tooltip-button5" href="#">DETAILS</a></td>
+                </div>
+            </tr>
+        </tbody>
+    </table>
+<div class="container-buttons">
+    <a href=" {{ url_for('index') }}">
+    <button>Change data</button>
+    </a>
+    <a href="#">
+    <button onClick="window.location.reload();">Reload meal plan</button>
+    </a>
+</div>
+    <!--ADD A SHOPPING LIST PAGE-->
+    <!-- CREATE ANOTHER PAGE FOR THOSE WHO ALREADY KNOW THEIR MACRONUTRIENTS-->
+    <!-- ADD A BUTTON TO CHANGE SINGLE MEAL -->
+    
+{% endblock %}

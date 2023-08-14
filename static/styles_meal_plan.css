@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: center;
+    background-image: url(/static/Foody_logo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, .8);
+    display: grid;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    justify-items: center;
+}
+
+.plan {
+    border-collapse: collapse;
+    width: 70%;
+    background-color: aliceblue;
+    border-radius: 5px;
+    margin: 7px auto;
+}
+
+tr:hover {
+box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.15);
+}
+
+.dataframe tr:hover{
+    background-color: #f5f5f5;
+}
+
+.plan thead tr td{
+    font-size:20px;
+    letter-spacing: 1px;
+    color:gray;
+    padding: 10px;
+    font-family: Georgia, serif;
+}
+
+.plan tbody tr td:nth-last-child(4){
+    font-size: 20px;
+    padding: 2px;
+}
+
+.plan tbody tr td{
+    padding: 2px;
+    font-size: 15px;
+}
+
+.plan tbody span {
+    font-size:12px;
+    color:gray;
+}
+
+a {
+    color:currentColor;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+    color: gray;
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    place-content: right;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: .8;
+    }
+}
+#tooltip-text1, #tooltip-text2, #tooltip-text3, #tooltip-text4, #tooltip-text5 {
+    display: none;
+    position: absolute;
+    animation: fadeIn 0.6s;
+    font-size: 1rem;
+    color: #fff;
+    opacity: .8;
+    background: gray;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1;
+    width: 160px;
+    margin-left: 492px;
+}
+
+#tooltip-text1, #tooltip-text2, #tooltip-text4 {
+    top: -102px;
+
+}
+
+#tooltip-text3 {
+    top: -60px;
+    left: 90%;
+}
+
+#tooltip-text5 {
+    top: -65px;
+    left: 90%;
+}
+
+#tooltip-text1:before, #tooltip-text2:before, #tooltip-text3:before, #tooltip-text4:before, #tooltip-text5:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    border: 8px solid transparent;
+    border-top: 8px solid gray;
+}
+
+.container {
+    background-color: #2D303C;
+    border-color: #1b1b25;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.container-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 5px 40px;
+    transition: 0.2s all ease-in-out;
+}
+
+.container-buttons button{
+    border: 1px solid transparent;
+    height: 38px;
+    line-height: 38px;
+    width: 150px;
+    border-radius: 19px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #807182;
+    color: white;
+    padding-left: 5px;
+}
+
+.container-buttons button:hover{
+    background: #171a2b;
+    color: white;
+}

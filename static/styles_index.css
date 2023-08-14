@@ -1,0 +1,193 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: center;
+    background-image: url(/static/Foody_logo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, .8);
+    display: grid;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    height: 100vh;
+    justify-items: center;
+}
+
+.signup-container {
+    display: grid;
+    grid-template-areas: "left right";
+    max-width: 900px;
+    user-select: none;
+}
+
+.left-container {
+    background: #171a2b;
+    overflow: hidden;
+    padding: 40px 0 0 0;
+    position: relative;
+    text-align: center;
+    width: 300px;
+}
+
+.left-container .logo {
+    position: absolute;
+    text-align: left;
+}
+
+.left-container .logo:before {
+    background: #807182;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0.4;
+    width: 100%;
+    z-index: 1;
+}
+
+#logo1 {
+    width: 900px;
+        margin-left: -290px;
+        margin-top: -150px;
+}
+
+#logo2 {
+    width: 500px;
+    margin-top: -200px;
+    margin-left: -98px;
+}
+
+.right-container {
+    background: #d8aa96;
+    display: grid;
+    grid-template-areas: "." ".";
+    width: 500px;
+}
+
+.right-container h1:nth-of-type(1) {
+    color: rgba(0, 0, 0, .8);
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.right-container .set {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.right-container input {
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 4px;
+    height: 38px;
+    line-height: 38px;
+    padding-left: 5px;
+}
+
+.right-container input,
+.right-container label {
+    color: rgba(0, 0, 0, .8);
+}
+
+.right-container header {
+    padding: 40px;
+}
+
+.right-container label,
+.right-container input {
+    width: 176px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.right-container .goal .radio-container,
+.right-container .activity_level .radio-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.right-container footer {
+    align-items: center;
+    display: grid;
+    padding: 5px 40px;
+    background: #fff;
+    transition: 0.2s all ease-in-out;
+}
+
+.right-container footer input {
+    border: 1px solid transparent;
+    height: 38px;
+    line-height: 38px;
+    width: 100px;
+    border-radius: 19px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #807182;
+    color: white;
+}
+
+.right-container footer input:hover {
+    background: #171a2b;
+    color: white;
+}
+
+
+.age label,
+.gender label,
+.activity_level label,
+.goal label,
+.height label,
+.weight label {
+    display: block;
+    margin-bottom: 5px;
+    padding: 3px;
+}
+
+.radio-container {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 4px;
+    display: inline-block;
+    padding: 5px;
+}
+
+.radio-container label {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: 0.2s all ease-in-out;
+    width: 80px;
+}
+
+.radio-container input[type="radio"] {
+    display: none;
+}
+
+.radio-container input[type="radio"]:checked + label {
+    background: #f7b1ab;
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.radio-container input[type="radio"]:hover + label {
+    background: #f7b1ab;
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.activity_level, .goal {
+    margin: 10px 0;
+}
